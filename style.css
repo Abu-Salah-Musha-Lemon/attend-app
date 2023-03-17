@@ -1,9 +1,9 @@
 * {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
 }
-body {
+.container {
   margin: 0 auto;
 }
 .nav{
@@ -74,4 +74,9 @@ body {
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+}
+footer {
+  display: flex;
+  align-items: center;
+  justify-content:center ;
 }
