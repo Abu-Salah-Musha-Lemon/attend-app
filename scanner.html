@@ -1,8 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="menu.css">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-<title>Scanner </title>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>scanner</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="menu.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
 <style>
   .result {
     background-color: green;
@@ -21,56 +29,68 @@
   #reader {
     width: 400px;
   }
-  .nav{
+
+  .nav {
     z-index: 4;
   }
 </style>
 
 <body>
-
-  <div class="container">
-    <header>
-      <div class="nav">
-        <div class="flexDiv">
-          <button class="sec_btn" onclick="openMulti();"><i class="ri-menu-line"></i></button>
-          <div class="selectWrapper">
-            <div class="multiSelect" id="menu-0">
-              <div class="bottomBorder"> <a href="./admin.html">Admin</a></div>
-              <div onclick="openMulti();"> <a href="./scanner.html">Entry</a></div>
-              <div onclick="openMulti();"> <a href="./Dashboard.html">DashBoard</a></div>
+  <div class="contain">
+    <div class="container">
+      <header>
+        <div class="nav">
+          <div class="flexDiv">
+            <button class="sec_btn" onclick="openMulti();"><i class="ri-menu-line"></i></button>
+            <div class="selectWrapper">
+              <div class="multiSelect" id="menu-0">
+                <div class="bottomBorder"> <a href="./admin.html">Admin</a></div>
+                <div onclick="openMulti();"> <a href="./scanner.html">Entry</a></div>
+                <div onclick="openMulti();"> <a href="./Dashboard.html">DashBoard</a></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
+      <main>
+        <div class="row">
+          <div class="col">
+            <div id="reader"></div>
+          </div>
+          <div class="col" style="padding:30px;">
+            <h4>SCAN RESULT</h4>
+            <div id="result">Result Here</div>
+          </div>
+        </div>
+      </main>
 
-    <div class="row">
-      <div class="col">
-        <div id="reader"></div>
-      </div>
-      <div class="col" style="padding:30px;">
-        <h4>SCAN RESULT</h4>
-        <div id="result">Result Here</div>
-      </div>
+      <footer>
+        <div class="footer">@lemon 2023</div>
+    </footer>
     </div>
-</div>
+  </div>
+<!-- script -->
+
+<script src="menu.js"></script>
 <script src="html5-qrcode.min.js"></script>
-    <script src="menu.js"></script>
-    <script src="script.js"></script>
-    <script type="text/javascript">
-      function onScanSuccess(qrCodeMessage) {
-        document.getElementById('result').innerHTML = '<span class="result">' + qrCodeMessage + '</span>';
-      }
+  <script src="script.js"></script>
+  <script type="text/javascript">
+        function onScanSuccess(qrCodeMessage) {
+          document.getElementById('result').innerHTML = '<span class="result">' + qrCodeMessage + '</span>';
+        }
 
-      function onScanError(errorMessage) {
-        //handle scan error
-      }
+        function onScanError(errorMessage) {
+          //handle scan error
+        }
 
-      var html5QrcodeScanner = new Html5QrcodeScanner(
-        "reader", {
-          fps: 10,
-          qrbox: 250
-        });
-      html5QrcodeScanner.render(onScanSuccess, onScanError);
-    </script>
+        var html5QrcodeScanner = new Html5QrcodeScanner(
+          "reader", {
+            fps: 10,
+            qrbox: 250
+          });
+        html5QrcodeScanner.render(onScanSuccess, onScanError);
+  </script>
+
 </body>
+
+</html>
