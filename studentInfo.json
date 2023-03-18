@@ -1,6 +1,14 @@
-{
-    "name":"Lemon",
-    "roll": 1,
-    "subject":"CSE"
-
-}
+[
+    {
+        "name":"Lemon",
+        "roll": 1,
+        "subject":"CSE"
+    
+    },
+    {
+        "name":"Lemon",
+        "roll": 1,
+        "subject":"CSE"
+    
+    }
+]

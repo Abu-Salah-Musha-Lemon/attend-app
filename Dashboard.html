@@ -10,7 +10,15 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <title>DashBoard </title>
 </head>
-
+<style>
+    /* .studentInfo{
+        background: red;
+        width: 500px;
+        height: 50px;
+        color: wheat;
+        z-index: 5;
+    } */
+</style>
 <body>
 <div class="container">
         <header>
@@ -30,7 +38,7 @@
 
     <main>
         <div class="title">
-            <div>Admin</div>
+            <div>DashBoard</div>
         </div>
 
         <div class="pannel">
@@ -43,7 +51,7 @@
             <p>Roll:</p>
             <p>CSE</p>
         </div>
-        <div class="pannel"></div>
+        <div class="studentInfo"></div>
     </main>
 
     <footer>
@@ -53,9 +61,26 @@
 </div>
 
 
-    <script src="menu.js"></script>
-    <script src="script.js"></script>
-    <script src="studentInfo.js"></script>
+    <script src="./menu.js"></script>
+    <script src="./script.js"></script>
+    <script src="./studentInfo.js"></script>
+    <!-- <script type="module">
+        import user  from "./studentInfo.json" assert{type:'json'};
+        fetch('./studentInfo.json')
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(data){
+            for (let i = 0; i < data.length; i++) {
+                document.getElementsByClassName('studentInfo').innerHTML +=
+                data[i].name+ " =>" +data[i].roll +" " +data[i].subject +'<br/>'
+                
+            }
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+    </script> -->
 </body>
 
 
