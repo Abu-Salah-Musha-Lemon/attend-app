@@ -6,8 +6,20 @@
     
     },
     {
-        "name":"Lemon",
-        "roll": 1,
+        "name":"Leon",
+        "roll": 2,
+        "subject":"CSE"
+    
+    },
+    {
+        "name":"Redoy",
+        "roll": 3,
+        "subject":"CSE"
+    
+    },
+    {
+        "name":"Mahin",
+        "roll": 4,
         "subject":"CSE"
     
     }
