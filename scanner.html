@@ -1,38 +1,72 @@
 <script src="html5-qrcode.min.js"></script>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="menu.css">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+<title>Scanner </title>
 <style>
-  .result{
+  .result {
     background-color: green;
-    color:#fff;
-    padding:20px;
+    color: #fff;
+    padding: 20px;
   }
-  .row{
-    display:flex;
+
+  .col {
+    width: 400px;
+  }
+
+  .row {
+    display: ;
+  }
+
+  #reader {
+    width: 400px;
   }
 </style>
 
+<body>
 
-<div class="row">
-  <div class="col">
-    <div style="width:500px;" id="reader"></div>
-  </div>
-  <div class="col" style="padding:30px;">
-    <h4>SCAN RESULT</h4>
-    <div id="result">Result Here</div>
-  </div>
-</div>
+  <div class="container">
+    <header>
+      <div class="nav">
+        <div class="flexDiv">
+          <button class="sec_btn" onclick="openMulti();"><i class="ri-menu-line"></i></button>
+          <div class="selectWrapper">
+            <div class="multiSelect" id="menu-0">
+              <div class="bottomBorder"> <a href="./admin.html">Admin</a></div>
+              <div onclick="openMulti();"> <a href="./scanner.html">Entry</a></div>
+              <div onclick="openMulti();"> <a href="./Dashboard.html">DashBoard</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
 
+    <div class="row">
+      <div class="col">
+        <div id="reader"></div>
+      </div>
+      <div class="col" style="padding:30px;">
+        <h4>SCAN RESULT</h4>
+        <div id="result">Result Here</div>
+      </div>
+    </div>
 
-<script type="text/javascript">
-function onScanSuccess(qrCodeMessage) {
-    document.getElementById('result').innerHTML = '<span class="result">'+qrCodeMessage+'</span>';
-}
+    <script src="menu.js"></script>
+    <script src="script.js"></script>
+    <script type="text/javascript">
+      function onScanSuccess(qrCodeMessage) {
+        document.getElementById('result').innerHTML = '<span class="result">' + qrCodeMessage + '</span>';
+      }
 
-function onScanError(errorMessage) {
-  //handle scan error
-}
+      function onScanError(errorMessage) {
+        //handle scan error
+      }
 
-var html5QrcodeScanner = new Html5QrcodeScanner(
-    "reader", { fps: 10, qrbox: 250 });
-html5QrcodeScanner.render(onScanSuccess, onScanError);
-
-</script>
+      var html5QrcodeScanner = new Html5QrcodeScanner(
+        "reader", {
+          fps: 10,
+          qrbox: 250
+        });
+      html5QrcodeScanner.render(onScanSuccess, onScanError);
+    </script>
+</body>
