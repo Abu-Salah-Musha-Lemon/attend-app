@@ -12,15 +12,6 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>DashBoard </title>
 </head>
-<style>
-    /* .studentInfo{
-        background: red;
-        width: 500px;
-        height: 50px;
-        color: wheat;
-        z-index: 5;
-    } */
-</style>
 
 <body>
     <div class="container-fluid">
@@ -48,7 +39,7 @@
                         <i class="ri-menu-line"></i>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#">Science</a></li>
+                        <li><a class="dropdown-item" href="#"search()>Science</a></li>
                         <li><a class="dropdown-item" href="#">Art</a></li>
                         <li><a class="dropdown-item" href="#">Buineness</a></li>
                     </ul>
@@ -77,6 +68,18 @@
         <script src="./menu.js"></script>
         <script src="./script.js"></script>
         <script src="./studentInfo.js"></script>
+        <script>
+            function search(source, name) {
+                var results;
+
+                name = name.toUpperCase();
+                results = $.map(source, function (entry) {
+                    var match = entry.name.toUpperCase().indexOf(name) !== -1;
+                    return match ? entry : null;
+                });
+                return results;
+            }
+        </script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
             integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
         </script>
